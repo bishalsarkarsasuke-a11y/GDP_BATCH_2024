@@ -1,42 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GOMATI DISTRICT POLYTECHNIC - BATCH 2024</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6fa;
+      background: #f4f6fb;
       margin: 0;
       padding: 0;
     }
     header {
-      background: #003399;
+      background: #0d47a1;
       color: white;
       text-align: center;
-      padding: 30px;
+      padding: 25px 10px;
     }
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 26px;
+      font-weight: bold;
     }
-    h2 {
-      color: #003399;
+    header h2 {
+      font-size: 18px;
+      margin-top: 5px;
     }
     section {
+      max-width: 800px;
+      margin: 25px auto;
       background: white;
-      margin: 30px auto;
-      padding: 25px;
       border-radius: 10px;
-      width: 80%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h3 {
+      color: #0d47a1;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin: 8px 0;
+      font-weight: 500;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     footer {
-      background: #001f4d;
-      color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 40px;
+      background: #0d47a1;
+      color: white;
+      margin-top: 30px;
+    }
+    a {
+      color: #0d47a1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      background: #0d47a1;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #09327a;
     }
   </style>
 </head>
@@ -44,26 +89,39 @@
 
 <header>
   <h1>GOMATI DISTRICT POLYTECHNIC</h1>
-  <p><b>Batch 2024 </b></p>
+  <h2>Batch 2024</h2>
 </header>
 
 <section>
-  <h2>🎓 About the Project</h2>
-  <p>This website is created for students of <b>GDP Batch 2024</b> to share information, updates, and resources.</p>
+  <h3>🎓 About the Project</h3>
+  <p>This website is created for students of <strong>GDP Batch 2024</strong> to share information, updates, and resources about our college journey.</p>
 </section>
 
 <section>
-  <h2>👥 Team Members</h2>
+  <h3>👨‍💻 Team Members</h3>
   <ul>
-    <li><b>Bishal Sarkar</b> — Founder</li>
-    <li><b>Member 2</b> — Developer</li>
-    <li><b>Member 3</b> — Designer</li>
+    <li><strong>Developer:</strong> Bishal Sarkar</li>
+    <li><strong>Designer:</strong> Bishal Sarkar</li>
   </ul>
 </section>
 
 <section>
-  <h2>📢 News & Updates</h2>
+  <h3>📰 News & Updates</h3>
   <p>Stay tuned for project submissions, photos, and college updates!</p>
+</section>
+
+<section>
+  <h3>📸 Gallery</h3>
+  <div class="gallery">
+    <img src="https://source.unsplash.com/400x300/?college" alt="College">
+    <img src="https://source.unsplash.com/400x300/?students" alt="Students">
+    <img src="https://source.unsplash.com/400x300/?technology" alt="Tech">
+  </div>
+</section>
+
+<section>
+  <h3>📞 Contact</h3>
+  <p>Follow us on Instagram: <a href="https://www.instagram.com/itz_sarkarr_18?igsh=MTFzaG91a2c4Y3kwag==" target="_blank">@itz_sarkarr_18</a></p>
 </section>
 
 <footer>
