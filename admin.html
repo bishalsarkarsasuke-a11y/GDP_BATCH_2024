@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - GDP Batch 2024</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0d47a1;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .login-box, .editor-box {
+      max-width: 500px;
+      background: white;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input[type="password"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background: #0d47a1;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #08327a;
+    }
+    .hidden {
+      display: none;
+    }
+    textarea {
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>Admin Panel - GDP Batch 2024</h2>
+</header>
+
+<div class="login-box" id="loginBox">
+  <h3>🔐 Enter Admin Password</h3>
+  <input type="password" id="password" placeholder="Enter password...">
+  <button onclick="login()">Login</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div class="editor-box hidden" id="editorBox">
+  <h3>📝 Edit Website Content</h3>
+  <label>About Section:</label>
+  <textarea id="aboutText">This website is created for students of GDP Batch 2024 to share information, updates, and resources about our college journey.</textarea>
+  
+  <label>News & Updates:</label>
+  <textarea id="newsText">Stay tuned for project submissions, photos, and college updates!</textarea>
+  
+  <label>Gallery Image Links (comma separated):</label>
+  <textarea id="galleryLinks">https://source.unsplash.com/400x300/?college, https://source.unsplash.com/400x300/?students, https://source.unsplash.com/400x300/?technology</textarea>
+  
+  <button onclick="saveChanges()">Save Changes</button>
+  <p id="saveMsg" style="color:green;"></p>
+</div>
+
+<script>
+  function login() {
+    const pass = document.getElementById('password').value;
+    const error = document.getElementById('error');
+    if (pass === 'gdp2024') {
+      document.getElementById('loginBox').classList.add('hidden');
+      document.getElementById('editorBox').classList.remove('hidden');
+    } else {
+      error.textContent = "Incorrect password!";
+    }
+  }
+
+  function saveChanges() {
+    const about = document.getElementById('aboutText').value;
+    const news = document.getElementById('newsText').value;
+    const gallery = document.getElementById('galleryLinks').value.split(',');
+
+    let html = `
+      <h3>🎓 About the Project</h3>
+      <p>${about}</p>
+      <h3>📰 News & Updates</h3>
+      <p>${news}</p>
+      <h3>📸 Gallery</h3>
+      <div class="gallery">
+        ${gallery.map(link => `<img src="${link.trim()}" style="width:100%;max-width:200px;margin:5px;border-radius:10px;">`).join('')}
+      </div>
+    `;
+
+    document.getElementById('saveMsg').innerHTML = 
+      "✅ Changes generated below — copy and paste into <b>index.html</b>:<br><br>" + html;
+  }
+</script>
+
+</body>
+</html>
